@@ -1,0 +1,136 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
+    background-color: #5b5b5b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.grid{
+  margin-top: min(5vh,5vw);
+    width: min(90vw,70vh);
+    height: min(90vw,70vh);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: .3rem;
+    
+}
+.grid div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #151111;
+    color: whitesmoke;
+    font-size: min(25vw,20vh);
+    font-weight: 900;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+  .grid .forbid{
+     cursor: not-allowed;
+  }
+  #messege ,#play{
+    font-size: 2em;
+    font-weight: 900;
+    font-family:Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 1px whitesmoke;
+    color: #790707;
+    text-shadow: 1px 1px 1px whitesmoke;
+    transition: all .4s ease-in-out;
+  }
+
+  #play{
+    position: absolute;
+    text-decoration: none;
+    z-index: 23;
+    background-color:rgb(23, 7, 13);
+    border: .3rem solid rgb(89, 82, 187);
+    color: whitesmoke;
+    border-radius: .2rem;
+   display: flex;
+   justify-content: center;
+   padding: 10px 20px;
+   align-items: center;
+   transition: all .1sec ease-in-out;
+   display: none;
+   color: rgb(12, 90, 5);
+   text-shadow: 1px 1px  yellowgreen,-1px 1px  yellowgreen,1px -1px  yellowgreen,-1px -1px  yellowgreen;
+   animation: buble 2s infinite ;
+  }
+
+  @keyframes buble {
+    0%{
+      scale: 1;
+     
+    }
+    50%{
+      scale:1.2;
+    }
+    100%{
+      scale: 1;
+    }
+  }
+
+  #play:hover{
+    color: #cd1616;
+    text-shadow: 1px 1px 1px whitesmoke,-1px 1px 1px whitesmoke,1px -1px 1px whitesmoke,-1px -1px 1px whitesmoke;
+  }
+
+
+  .grid .circle::before,
+  .grid .circle::after,
+  .grid .hc:not(.x):not(.circle):hover::after,
+  .grid .hc:not(.x):not(.circle):hover::before{
+    content: '';
+    width: 80%;
+    height: 80%;
+    background-color: whitesmoke;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .grid .circle::after,
+  .grid .hc:not(.x):not(.circle):hover::after{
+    width: 60%;
+    height: 60%;
+    background-color: #151111;
+    z-index: 1;
+  }
+
+  .grid .x::before,
+  .grid .x::after,
+  .grid .hx:not(.x):not(.circle):hover::after,
+  .grid .hx:not(.x):not(.circle):hover::before{
+    content: '';
+    width: 90%;
+    height: 11%;
+    background-color: whitesmoke;
+    position: absolute;
+    border-radius: 5px;
+  }
+  .grid .x::after,
+  .grid .hx:not(.x):not(.circle):hover::after{
+    transform: rotate(45deg);
+    z-index: 1;
+  }
+  .grid .x::before,
+  .grid .hx:not(.x):not(.circle):hover::before{
+    transform: rotate(-45deg);
+  }
+
+  .grid .hx:not(.x):not(.circle):hover::after,
+  .grid .hx:not(.x):not(.circle):hover::before,
+  .grid .hc:not(.x):not(.circle):hover::before{
+    background-color: #5b5b5b;
+  }
+

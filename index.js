@@ -110,7 +110,7 @@ childs.forEach((e,i)=>{
                 e.classList.remove('hx');
         }
     });
-    e.addEventListener('click',()=>{
+    e.addEventListener('click',async ()=>{
         if(e.innerHTML==="" && draw==false)
         {
             
@@ -120,9 +120,9 @@ childs.forEach((e,i)=>{
             e.classList.add('x');
             grid[row][col]=1;
             if(check(1)==true)
-            messege(1);
+              messege(1);
             else{
-                messege('O');
+                 messege('O');
             }
         }
         else{
